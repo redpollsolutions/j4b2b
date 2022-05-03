@@ -1,0 +1,40 @@
+@base <https://j4b2b.org/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<> a owl:Ontology ;
+	dc:title "J4B2B (JSON for B2B)" ;
+	dc:description "J4B2B (or JSON for B2B) is a vocabulary for implementing B2B processes using JSON." .
+	
+<Document> a owl:Class ;
+	rdfs:label "Document"@en ;
+	rdfs:comment "A document represents a business transaction." .
+	
+<PurchaseOrder> a owl:Class ;
+	rdfs:label "Purchase Order"@en ;
+	rdfs:comment "A purchase order is a commercial document and first official offer issued by a buyer to a seller, indicating types, quantities, and agreed prices for products or services. It is used to control the purchasing of products and services from external suppliers." ;
+	rdfs:subClassOf <Document> .
+	
+<LegalEntity> a owl:Class ;
+	rdfs:label "Legal Entity"@en ;
+	rdfs:comment "an individual, company, or organization that has legal rights and obligations." .
+	
+<purchaseOrderNumber> a owl:ObjectProperty ;
+	rdfs:label "Purchase Order Number"@en ;
+	rdfs:domain <PurchaseOrder> .
+	
+<buyer> a owl:ObjectProperty ;
+	rdfs:label "Buyer"@en ;
+	rdfs:range <LegalEntity> ;
+	rdfs:domain <PurchaseOrder> .
+
+
+
+
+	
+	
+
+
+
+	
